@@ -1,0 +1,77 @@
+	<div class="columns-container">
+		{{#if success_msg}}
+          <div class="alert alert-success">{{success_msg}}</div>
+        {{/if}}
+											
+		<!-- Breadcrumb -->
+		<div class="breadcrumb clearfix">
+			<a class="home" href="/" title="Return to Home"><i class="icon-home"></i></a>
+					<span class="navigation-pipe">&gt;</span>
+								Your Cart
+					</div>
+		<!-- /Breadcrumb -->
+
+									<div id="slider_row" class="row">
+									</div>
+							<div class="row">
+		<div id="center_column" class="center_column col-xs-12 col-sm-12">
+			<h1 class="page-heading">Shopping Cart</h1>
+
+
+			<!---->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<form action="/cart/checkout" method="post" id="create-account_form" class="box">
+						<h3 class="page-subheading">CHECK OUT YOUR CART... THEN CHECKOUT</h3>
+                      
+                        {{#if user}}
+                      
+                          {{#if cart}}
+                      
+                            <div>
+                              <table class="table table-hover">
+                                <tr>
+                                  <td>ID</td>
+                                  <td>Item</td>
+                                  <td>Quantity</td>
+                                  <td>Price</td>      
+                                </tr>
+                              {{#each cart}}
+                                <tr>
+                                  <td>{{this.id}}</td>
+                                  <td>{{this.item}}</td> 
+                                  <td>{{this.quantity}}</td>
+                                  <td>${{this.price}}</td>
+                                </tr>
+                              {{/each}}
+                                <tr>
+                                  <td></td>
+                                  <td></td> 
+                                  <td>Total:</td>
+                                  <td>${{total}}</td>
+                                </tr>
+                              </table>
+                            </div>
+                          {{else}}
+                            <h3>Cart is empty!</h3>
+                          {{/if}}
+                        
+                        {{else}}
+                          <h3>Please Sign up or Sign in to view cart!</h3>
+                        {{/if}}
+                      
+						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium anothergray">
+									<span>
+										<i class="icon-money left"></i>
+									CHECKOUT
+							</span>
+						</button>
+					</form>
+                  <br>
+                  <br>
+				</div>
+			</div><!-- #center_column -->
+		</div><!-- .row -->
+	</div><!-- #columns -->
+</div><!-- .columns-container -->
+							

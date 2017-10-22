@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<title>L' Artiste</title>
+
+
+		<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="all" />
+	
+		<script type="text/javascript">
+		
+		</script>
+		
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext" type="text/css" media="all" />
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+				<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+
+<body id="index" class="index hide-left-column hide-right-column lang_en">
+		<div id="page">
+			<div class="header-container">
+				<header id="header">																					
+				<div class="nav">
+					<div class="container">
+						<div class="row">
+							<nav>
+								
+                              {{#if user}}
+                              
+                                <div class="header_user_info">
+                                    <a class="login btn" href="/logout" rel="nofollow" title="Log out">
+                                      Logout
+                                  </a>
+								</div>
+                              
+                                <div class="header_user_info">
+                                  <a class="login btn" href="#" rel="nofollow" title="Log in to your account">
+                                      Welcome back, {{user.name}}
+                                  </a>
+                                </div>
+                              
+                              {{else}}
+                              
+                                <div class="header_user_info">
+                                    <a class="login btn" href="/login" rel="nofollow" title="Log in to your account">
+                                      Sign In / Sign Up
+                                  </a>
+                                </div>
+                              
+                                <div class="header_user_info">
+                                    <a class="login btn" href="/login" rel="nofollow" title="Log in to your account">
+                                        Welcome!{{user.name}}
+                                    </a>
+                                  </div>
+                              
+                              {{/if}}
+							</nav>
+								</div>
+							</div>
+						</div>
+					<div>
+						<div class="container">
+							<div class="row">
+								<div id="header_logo">
+									<a href="/" title="DESCRIPTION OF SITE">
+										<img class="logo img-responsive" src="/images/art-logo.png" alt="L'Artiste" width="1300"/>
+									</a>
+								</div>
+
+								<div id="search_block_top" class="col-sm-4 clearfix">
+									<form id="searchbox" method="post" action="/search" >
+										<input type="hidden" name="searchType" value="artist" />
+										<input type="hidden" name="orderby" value="position" />
+										<input type="hidden" name="orderway" value="desc" />
+										<input class="search_query form-control" type="text" id="search_query_top" name="search" placeholder="Search" value="" />
+										<button type="submit" name="submit_search" class="btn btn-default button-search">
+											<span>Search</span>
+										</button>
+									</form>
+								</div>
+
+
+						<div class="col-sm-4 clearfix">
+							<div class="shopping_cart">
+							<a href="/cart/" title="View my shopping cart" rel="nofollow">
+								<i style="margin-right: 10px" class="fa fa-shopping-cart fa-lg"></i><b>Cart</b>
+								<span class="ajax_cart_quantity unvisible">0</span>
+								<span class="ajax_cart_product_txt unvisible">Product</span>
+								<span class="ajax_cart_product_txt_s unvisible">Products</span>
+								<span class="ajax_cart_total unvisible">
+									</span>
+                                {{#if cartCount}}
+                              
+                                  <span class="ajax_cart_no_product">{{cartCount}}</span>
+                                
+                                {{else}}
+                              
+                                  <span class="ajax_cart_no_product"></span>
+                              
+                                {{/if}}
+								
+										</a>
+								<div class="cart_block block exclusive">
+									<div class="block_content">
+										<div class="cart_block_list">
+											<p class="cart_block_no_products">
+												No products
+											</p>
+											<div class="cart-prices">
+												<div class="cart-prices-line first-line">
+													<span class="price cart_block_shipping_cost ajax_cart_shipping_cost unvisible">
+																								 To be determined																	</span>
+													<span class="unvisible">
+														Shipping
+													</span>
+												</div>
+													<div class="cart-prices-line last-line">
+														<span class="price cart_block_total ajax_block_cart_total">$0.00</span>
+														<span>Total</span>
+													</div>
+												</div>
+											<p class="cart-buttons">
+												<a id="button_order_cart" class="btn btn-default button button-small" href="cart.html" title="Check out" rel="nofollow">
+													<span>
+														Check out<i class="icon-chevron-right right"></i>
+													</span>
+												</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="layer_cart">
+							<div class="clearfix">
+
+							</div>
+
+							<div class="crossseling"></div>
+						</div> <!-- #layer_cart -->
+
+						<div class="layer_cart_overlay"></div>
+
+						<div id="block_top_menu" class="sf-contener clearfix col-lg-12">
+							<div class="cat-title">Menu</div>
+							<ul class="sf-menu clearfix menu-content">
+								<li><a href="/artists" title=“ARTISTS”>ARTISTS</a></li>
+                                <li><a href="/artworks" title=“ARTWORKS”>ALL ART</a></li>
+                                <li><a href="/artworks/category/painting" title=“ART”>PAINTINGS</a></li>
+                                <li><a href="/artworks/category/ceramics" title=“ART”>CERAMICS</a></li>
+                                <li><a href="/artworks/category/photography" title=“ART”>PHOTOGRAPHY</a></li>
+                                <li><a href="/artworks/category/sculpture" title=“ART”>SCULPTURES</a></li>
+                                {{#if user}}
+                                  
+                                  <li><a href="/artworks/new-art" title="ADD">Add Art</a></li>
+                              
+                                  <li><a href="/user/account" title="ACCOUNT">ACCOUNT SETTING</a></li>
+                                {{/if}}
+                            </ul>
+						</div>
+
+						</div>
+					</div>
+				</div>
+		</header>	
+
+
+	</div>		
+
+							
+
+				<div class="row">
+					<div id="center_column" class="center_column col-xs-12 col-sm-12">
+	    				<div class="tab-content">		
+									
+	<ul id="homefeatured" class="product_list grid row homefeatured tab-pane">
+		<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line">
+			<div class="product-container" itemscope itemtype="https://schema.org/Product">
+				
+
+				<div class="right-block">
+					<h5 itemprop="name">
+						<a class="product-name" href="http://cc.clearviewstudios.com/home/2-t-shirt.html" title="50/50 Cotton/Poly 5.6 oz. short sleeve T-Shirt" itemprop="url" >
+							50/50 Cotton/Poly 5.6 oz. short sleeve...
+						</a>
+					</h5>
+						<p class="product-desc" itemprop="description">
+						
+					</p>
+										<div class="content_price">
+													
+							<span class="price product-price">
+								$3.75							</span>
+														
+							
+							
+											</div>
+										<div class="button-container">
+								<a class="button ajax_add_to_cart_button btn btn-default" href="https://cc.clearviewstudios.com/cart?add=1&amp;id_product=2&amp;ipa=49&amp;token=1481939ea2ef992fae0a1d3ce933329c" rel="nofollow" title="Add to cart" data-id-product-attribute="49" data-id-product="2" data-minimal_quantity="1">
+									<span>Add to cart</span>
+								</a>
+					<a class="button lnk_view btn btn-default" href="http://cc.clearviewstudios.com/home/2-t-shirt.html" title="View">
+							<span>More</span>
+					</a>
+				</div>	
+			<div class="product-flags">
+			</div>
+				<span class="availability">
+																	<span class=" label-success">
+										In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+</div>
+
+<div class="container">
+    {{{body}}}
+</div>
+
+<!-- Footer -->
+<div class="footer-container">
+	<footer id="footer"  class="container">
+		<div class="row">
+<!-- Block categories module -->
+	<section class="blockcategories_footer footer-block col-xs-12 col-sm-2">
+		<h4>Categories</h4>
+		<div class="category_footer toggle-footer">
+			<div class="list">
+				<ul class="tree dhtml">
+													
+					<li >
+						<a 
+						href="/artworks/category/painting" title="">
+							Paintings
+						</a>
+						</li>
+
+												
+																					
+					<li >
+						<a 
+						href="/artworks/category/ceramics" title="">
+							Ceramics
+						</a>
+						</li>
+
+												
+																					
+					<li >
+						<a 
+						href="/artworks/category/photography" title="">
+							Photography
+						</a>
+						</li>
+
+												
+																					
+					<li class="last">
+						<a 
+						href="/artworks/category/sculpture" title="">
+							Sculptures
+						</a>
+						</li>
+
+					</ul>
+				</div>
+			</div> <!-- .category_footer -->
+		</section>
+			<!-- /Block categories module -->
+
+	<!-- Block CMS module footer -->
+	<section class="footer-block col-xs-12 col-sm-2" id="block_various_links_footer">
+		<h4>Information</h4>
+		<ul class="toggle-footer">
+			<li class="item">
+			</li>
+												<li>
+				<a href="sitemap" title="Sitemap">
+					Sitemap
+				</a>
+			</li>
+					</ul>
+		
+	</section>
+		<!-- /Block CMS module footer -->
+
+<!-- Block myaccount module -->
+<section class="footer-block col-xs-12 col-sm-4">
+	<h4><a href="login.html" title="Manage my customer account" rel="nofollow">My account</a></h4>
+	<div class="block_content toggle-footer">
+		<ul class="bullet">
+			<li><a href="favorites.html" title="My orders" rel="nofollow">My Favorites</a></li>
+		</ul>
+	</div>
+</section>
+<!-- /Block myaccount module -->
+
+<!-- MODULE Block contact infos -->
+<section id="block_contact_infos" class="footer-block col-xs-12 col-sm-4">
+	<div>
+        <h4>About L'Artiste</h4>
+        <ul class="toggle-footer">
+               	<li>
+            		We are a consortium of artists who want our wares to be easily accessed.         	
+				</li>
+                  	<li>
+            		<i style="font-size: 17px" class="fa fa-envelope"></i>To reach out: 
+            		<span><a href="OUR EMAIL"</a></span>
+            	</li>
+                 <li>
+                    <i style=“font-size: 17px” class=“fa fa-envelope”></i>Contact: <a href="mailto:info@lartiste.com?Subject=Hello%20again" target="_top">info@lartiste.com</a>
+                    <span><a href="OUR EMAIL"></a></span>
+                </li>
+                    </ul>
+    </div>
+</section>
+<!-- /MODULE Block contact infos -->
+</div>
+					</footer>
+				</div><!-- #footer -->
+					</div><!-- #page -->
+</body></html>
+
+

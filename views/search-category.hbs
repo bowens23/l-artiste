@@ -1,0 +1,52 @@
+{{#if artworks}}
+  {{#each artworks}}
+
+    <div class="row">
+      <div  class="col-xs-6 col-md-4">
+        <a href="/artworks/{{this.id}}">
+          <img style="max-width:280px" src="{{this.media}}">
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-md-8">
+
+        <h2>
+          {{this.title}} 
+        </h2>
+        
+        {{#if this.Artist}}
+          <h3>
+              <a href="/artists/{{this.Artist.name}}">
+                {{this.Artist.name}}
+              </a>
+          </h3>
+        {{/if}}
+        
+          <h4>
+            Price: ${{this.price}}
+          </h4>
+        {{#if category}}
+          <h4>Category: 
+            <a href="/artworks/category/{{category}}">
+              {{category}}
+            </a>
+          </h4>
+        {{/if}}
+      </div>
+
+    </div>
+    <hr>
+  {{/each}}
+{{else}}
+
+  <div class="col-md-12">
+
+    <h1>No Art in this category. Sorry!</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+{{/if}}

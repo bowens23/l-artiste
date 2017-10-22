@@ -1,0 +1,103 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb clearfix">
+	<a class="home" href="/" title="Return to Home"><i class="icon-home"></i></a>
+			<span class="navigation-pipe">&gt;</span>
+			Setup Shop
+			</div>
+<!-- /Breadcrumb -->
+
+							<div id="slider_row" class="row">
+							</div>
+					<div class="row">
+<div id="center_column" class="center_column col-xs-12 col-sm-12">
+	<h1 class="page-heading">Create Your Very Own Art Shop</h1>
+
+
+	<!---->
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<form action="login.html" method="post" id="create-account_form" class="box">
+				<h3 class="page-subheading">Setup Your Art Page</h3>
+				<div class="form_content clearfix">
+					<p>From here you can add or update your shop name or bio</p>
+					<div class="alert alert-danger" id="create_account_error" style="display:none"></div>
+					<div class="form-group">
+						<label for="email_create">Artist's Name:</label>
+						<input type="text" id="name" class="is_required validate account_input form-control" id="name_create" name="email_create" value="" />
+					</div>
+					<div class="form-group">
+						<label for="email_create">Short Bio (150 characters):</label>
+						<textarea class="form-control" rows="5" id="comment"></textarea>
+					</div>
+
+					<div class="submit">
+						<input type="hidden" class="hidden" name="back" value="my-account" />						
+						<button class="btn btn-default button button-medium updateblue" type="submit" id="artistsinfo" name="SubmitCreate">
+							<span>
+								<i class="icon-check left"></i>
+								Create / Update
+							</span>
+						</button>
+						<input type="hidden" class="hidden" name="SubmitCreate" value="Create an account" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<form action="/artworks/new-art" method="post" id="login_form" class="box">
+				<h3 class="page-subheading">Add an Art Piece</h3>
+							<p>Go ahead! Add your art with a title and description to your liking.</p>
+					<div class="alert alert-danger" id="create_account_error" style="display:none"></div>
+				<div class="form_content clearfix">
+					<div class="form-group">
+						<label for="email_create">Art Piece Title</label>
+						<input required type="title" class="is_required validate account_input form-control" id="name_create" name="title" value="" />
+					</div>
+					<div class="form-group">
+						<label for="email_create">Description:</label>
+						<textarea name="description" required class="form-control" rows="5" id="comment" type="description"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="email_create">Price:</label>
+  							<input name="price" required type="text" class="form-control" placeholder="$0.00">					
+  					</div>
+  					<div class="form-group">
+				      <label for="sel1">Art Category (select one):</label>
+				      <select name="category" class="form-control" id="sel1" type="category">
+				        <option value="painting">Paintings</option>
+				        <option value="ceramics">Ceramics</option>
+				        <option value="photography">Photography</option>
+				        <option value="sculpture">Sculpture</option>
+				      </select>
+					</div>
+					<div class="form-group">
+						<label for="uploading_art">Upload an image of your art:</label>
+						</br>
+						<input class="btn btn-default btn-file" type="file" name="mediaFile">
+					</div>	
+						
+                    <label>
+                      Or
+                    </label>
+					
+					<div class="form-group">
+						<label for="email_create">Add a URL of the image</label>
+  							<input type="media" name="media" class="form-control">					
+  					</div>
+
+						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium">
+							<span>
+								<i class="icon-smile left"></i>
+								Add Piece
+							</span>
+						</button>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+						</div><!-- #center_column -->
+										</div><!-- .row -->
+				</div><!-- #columns -->
+			</div><!-- .columns-container -->
+							

@@ -1,0 +1,100 @@
+											
+<!-- Breadcrumb -->
+<div class="breadcrumb clearfix">
+	<a class="home" href="/" title="Return to Home"><i class="icon-home"></i></a>
+			<span class="navigation-pipe">&gt;</span>
+						User Login
+			</div>
+<!-- /Breadcrumb -->
+
+							<div id="slider_row" class="row">
+							</div>
+					<div class="row">
+<div id="center_column" class="center_column col-xs-12 col-sm-12">
+	<h1 class="page-heading">Sign Up or Sign In</h1>
+
+
+	<!---->
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+          
+          {{#if signUpErrors}}
+            
+            {{#each signUpErrors}}
+              <div class="alert alert-danger">{{this.msg}}</div>
+            {{/each}}
+          {{/if}}
+			<form action="/signup" method="post" id="create-account_form" class="box">
+				<h3 class="page-subheading">Create an account</h3>
+				<div class="form_content clearfix">
+					<p>Please enter your name, email address, and a password to create an account.</p>
+					<div class="alert alert-danger" id="create_account_error" style="display:none"></div>
+					<div class="form-group">
+						<label for="email_create">Name</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="Nick" />
+					</div>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input type="email" class="is_required validate account_input form-control" data-validate="isEmail" id="email" name="email" placeholder="nmalakar@gmail.com" />
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="password" name="password"/>
+					</div>
+                    <div class="form-group">
+						<label for="password">Confirm Password</label>
+						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword"/>
+					</div>
+					<div class="form-group">
+						  <label for="account-type"> Artist Account <input  class="checkbox" type="checkbox"  id="account-type" name="userType" value="artist"></label>
+					</div>
+					<div class="submit">
+						<input type="hidden" class="hidden" name="back" value="my-account" />						<button class="btn btn-default button button-medium exclusive" type="submit" id="SubmitCreate" name="SubmitCreate">
+							<span>
+								<i class="icon-user left"></i>
+								Create an account
+							</span>
+						</button>
+						<input type="hidden" class="hidden" name="SubmitCreate" value="Create an account" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+          
+          {{#if error}}
+            
+              <div class="alert alert-danger">{{error}}</div>
+
+          {{/if}}
+          
+			<form action="/login" method="post" id="login_form" class="box">
+				<h3 class="page-subheading">Already signed up?</h3>
+				<div class="form_content clearfix">
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input class="is_required validate account_input form-control" type="email" id="email" name="username" placeholder="Email" />
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input class="account_input form-control" type="password" data-validate="isPasswd" id="password" name="password" placeholder="Password" />
+					</div>
+					<p class="lost_password form-group"><a href="l-artiste-master/index.html" title="Recover your forgotten password" rel="nofollow">Forgot your password?</a></p>
+					<p class="submit">
+						<input type="hidden" class="hidden" name="back" value="my-account" />						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium">
+							<span>
+								<i class="icon-lock left"></i>
+								Login							
+							</span>
+						</button>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+  <br>
+						</div><!-- #center_column -->
+										</div><!-- .row -->
+				</div><!-- #columns -->
+			</div><!-- .columns-container -->
+							

@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-6">
+    <img style="max-width: 500px" class="art-photo" src="{{artwork.media}}">
+  </div>
+  <div class="col-md-6">
+
+    <h1>
+      {{artwork.title}} 
+    </h1>
+    <hr>
+    <h2>Artist:
+      <a href="/artists/{{artwork.Artist.name}}">
+        {{artwork.Artist.name}}
+      </a>
+    </h2>
+
+    <h3>
+      <strong>In Stock</strong>
+    </h3>
+    
+    <h3>
+      Price: ${{artwork.price}}
+    </h3>
+
+    {{#if user}}
+    <form method="post" action="/cart/addtocart">
+      <input type="hidden" name="title" value="{{artwork.title}}">
+      <input type="hidden" name="price" value="{{artwork.price}}">
+      <input type="hidden" name="ArtistId" value="{{artwork.Artist.id}}">
+      <button class="btn btn-success" type="submit"> Add To Cart</button>
+    </form>
+    
+    {{else}}
+      <br>
+      <h4><strong>Need to sign in to purchase</strong></h4>
+      <br>
+    {{/if}}
+    
+    <hr>
+    <h4>Description: {{artwork.description}}</h4>
+
+    <h4>Category: 
+      <a href="category/{{artwork.category}}">
+        {{artwork.category}}
+      </a>
+    </h4>
+  </div>
+</div>
+<br>
+<br>
+<br>
